@@ -507,7 +507,7 @@ module cv32e40p_cs_registers
 
         // mimpid, Machine Implementation ID
         CSR_MIMPID: begin
-          csr_rdata_int = (FPU || COREV_PULP || COREV_CLUSTER) ? 32'h1 : 'b0;
+          csr_rdata_int = ((FPU != 0) || (COREV_PULP != 0) || (COREV_CLUSTER != 0)) ? 32'h1 : 'b0;
         end
 
         // unimplemented, read 0 CSRs
